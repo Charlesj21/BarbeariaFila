@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BarbeariaFila.Api/BarbeariaFila.Api.csproj" />
+  <Project Path="BarbeariaFila.Application/BarbeariaFila.Application.csproj" />
+  <Project Path="BarbeariaFila.Domain/BarbeariaFila.Domain.csproj" />
+  <Project Path="BarbeariaFila.Infrastructure/BarbeariaFila.Infrastructure.csproj" />
+</Solution>
