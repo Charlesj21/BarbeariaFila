@@ -5,7 +5,6 @@ namespace BarbeariaFila.Domain.Entities;
 public class ItemFila
 {
     public int Id { get; private set; }
-    public string NomeCliente { get; private set; }
     public int ServicoId { get; private set; }
     public Servico Servico { get; private set; } = null!;
     public StatusFila Status { get; private set; }
@@ -15,15 +14,13 @@ public class ItemFila
 
     private ItemFila()
     {
-        NomeCliente = string.Empty;
     }
 
-    public ItemFila(string nomeCliente, int servicoId)
+    public ItemFila(int servicoId)
     {
-        if (string.IsNullOrWhiteSpace(nomeCliente))
-            throw new ArgumentException("O nome do cliente é obrigatório.", nameof(nomeCliente));
+        if (servicoId <= 0)
+            throw new ArgumentException("O serviço é obrigatório.", nameof(servicoId));
 
-        NomeCliente = nomeCliente.Trim();
         ServicoId = servicoId;
         Status = StatusFila.Aguardando;
         ChegouEm = DateTime.UtcNow;
